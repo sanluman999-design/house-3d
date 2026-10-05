@@ -1,5 +1,5 @@
 import * as T from 'three';import {FT,P} from './parameters.js';import {along,box} from './primitives.js';import {M} from './materials.js';
-export function opening(group,w,o,y){const mid=o.center*FT,ww=o.width*FT,L=mid-ww/2,R=mid+ww/2;const lo=o.type==='door'?0:o.type==='vent'?P.ventSill:P.windowSill,hi=o.type==='door'?P.doorHeight:o.type==='vent'?P.ventSill+P.ventHeight:P.windowSill+P.windowHeight;const frame=P.windowFrame;
+export function opening(group,w,o,y){const mid=o.center*FT,ww=o.width*FT,L=mid-ww/2,R=mid+ww/2;const lo=(o.type==='door'||o.type==='passage')?0:o.type==='vent'?P.ventSill:P.windowSill,hi=(o.type==='door'||o.type==='passage')?P.doorHeight:o.type==='vent'?P.ventSill+P.ventHeight:P.windowSill+P.windowHeight;const frame=P.windowFrame;if(o.type==='passage')return {L,R,lo,hi};
  along(group,w.a,w.b,L,L+frame,y+lo,y+hi,M.dark,.10);along(group,w.a,w.b,R-frame,R,y+lo,y+hi,M.dark,.10);along(group,w.a,w.b,L,R,y+hi-frame,y+hi,M.dark,.10);
  if(o.type!=='door'){along(group,w.a,w.b,L,R,y+lo,y+lo+frame,M.dark,.10);along(group,w.a,w.b,mid-frame/2,mid+frame/2,y+lo,y+hi,M.dark,.1);along(group,w.a,w.b,L+frame,R-frame,y+lo+frame,y+hi-frame,M.glass,.02)}else{
  // Open door leaf, hinged at left jamb, reveals actual wall void.

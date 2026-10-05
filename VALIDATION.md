@@ -29,3 +29,12 @@ Camera, UI event handlers, CSS, material definitions and bundled Three.js/OrbitC
 Existing `serve.py` was started on an automatically selected free port and successfully served this exact release. `START-HOUSE-3D.bat` is unchanged and still invokes that server from its own directory. A native Windows environment was not available for executing the BAT itself.
 
 All metric precision limits and inferred construction parameters remain documented in FINAL-PLANS.md. Validation of a visual reconstruction is not structural or construction certification.
+
+
+## 2026-10-05 final-plans-r3-entry-windows
+
+Local WebGL 2 inspection: both new closed doors viewed from outside and inside; 20 leaf ray checks pass, axes aligned, leaves start at each finished floor and remain below the slab. Both separate kitchen side windows have glass and no opaque blockage through their apertures. Exterior/interior screenshots inspected.
+
+Geometry comparison to r3: all non-wall floor data identical; only three Ground Floor kitchen opening definitions and two new doorway infill walls change. Roof sampling: 14,688 points, no mismatches; no duplicate roof meshes or stair/roof collisions. OTS, open terraces and Store-side roof preserved.
+
+Desktop and 390 × 844 mobile WebGL regressions cover Whole House, both floors, Roof On/Off, Day/Evening, Top View, Reset View, mouse orbit/wheel zoom, touch orbit and two-finger pinch zoom, and the information panel. No JavaScript/resource errors. Mobile testing uses browser touch emulation, not a physical handset. Source UI, camera, CSS, materials, lighting, local server and Windows launcher are unchanged.

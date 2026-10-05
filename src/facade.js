@@ -5,7 +5,7 @@ import {M} from './materials.js';
 export function railing(group,polygon,y){const posts=new Set();for(let i=0;i<polygon.length-1;i++){const a=polygon[i],b=polygon[i+1],len=Math.hypot(b[0]-a[0],b[1]-a[1])*FT;along(group,a,b,0,len,y+.12,y+P.railingHeight,M.glass,.025);along(group,a,b,0,len,y+P.railingHeight,y+P.railingHeight+.04,M.dark,.05);for(const p of [a,b]){const key=p.join(',');if(!posts.has(key)){box(group,P.railingPost,P.railingHeight,P.railingPost,p[0]*FT,y+P.railingHeight/2,p[1]*FT,M.dark);posts.add(key)}}}}
 
 function inside(point,polygon){let result=false;for(let i=0,j=polygon.length-1;i<polygon.length;j=i++){const a=polygon[i],b=polygon[j];if((a[1]>point[1])!==(b[1]>point[1])&&point[0]<(b[0]-a[0])*(point[1]-a[1])/(b[1]-a[1])+a[0])result=!result}return result}
-function outward(w,data){const dx=w.b[0]-w.a[0],dz=w.b[1]-w.a[1],length=Math.hypot(dx,dz);let n=[dz/length,-dx/length];const middle=[(w.a[0]+w.b[0])/2,(w.a[1]+w.b[1])/2];const occupied=sign=>(data.enclosed||data.slabs).some(poly=>inside([middle[0]+sign*n[0],middle[1]+sign*n[1]],poly));if(occupied(1)&&!occupied(-1))n=n.map(v=>-v);return n}
+function outward(w,data){if(w.facadeNormal)return w.facadeNormal;const dx=w.b[0]-w.a[0],dz=w.b[1]-w.a[1],length=Math.hypot(dx,dz);let n=[dz/length,-dx/length];const middle=[(w.a[0]+w.b[0])/2,(w.a[1]+w.b[1])/2];const occupied=sign=>(data.enclosed||data.slabs).some(poly=>inside([middle[0]+sign*n[0],middle[1]+sign*n[1]],poly));if(occupied(1)&&!occupied(-1))n=n.map(v=>-v);return n}
 
 // The old decorative panels were embedded in the wall centreline. Every new finish
 // is explicitly offset beyond the exterior wall face, including half its own depth.

@@ -920,14 +920,20 @@ export const ground = {
       ],
       "openings": [
         {
-          "type": "door",
-          "center": 7.3,
-          "width": 2.7,
-          "source": "Final plan D/W/V mark; unlabelled width inferred from raster"
+          "type": "window",
+          "center": 9.96875,
+          "width": 1.1875,
+          "source": "Final GF plan side glazing; separate side windows confirmed by client. Undimensioned width traced within existing exposed wall.",
+          "id": "kitchen-west-window",
+          "mullion": false
         }
       ],
       "outer": true,
       "thickness": 0.24130000000000001,
+      "facadeNormal": [
+        -1,
+        0
+      ],
       "facadeStart": 6.729166666666668
     },
     {
@@ -939,14 +945,7 @@ export const ground = {
         18.5625,
         34.25
       ],
-      "openings": [
-        {
-          "type": "window",
-          "center": 6.39583333335,
-          "width": 6,
-          "source": "Final plan D/W/V mark; unlabelled width inferred from raster"
-        }
-      ],
+      "openings": [],
       "outer": true,
       "thickness": 0.1905
     },
@@ -979,9 +978,40 @@ export const ground = {
         18.5625,
         34.25
       ],
-      "openings": [],
+      "openings": [
+        {
+          "type": "window",
+          "center": 0.90625,
+          "width": 1.1875,
+          "source": "Final GF plan side glazing; separate side windows confirmed by client. Undimensioned width traced within existing exposed wall.",
+          "id": "kitchen-east-window",
+          "mullion": false
+        }
+      ],
       "outer": true,
       "thickness": 0.24130000000000001
+    },
+    {
+      "a": [
+        5.7708333333,
+        29.791666666666668
+      ],
+      "b": [
+        0.3125,
+        29.791666666666668
+      ],
+      "openings": [
+        {
+          "type": "door",
+          "center": 2.72916666665,
+          "width": 4,
+          "source": "Client-confirmed vertically aligned central doors; GF entrance width 4 ft on final plan.",
+          "closed": true,
+          "id": "ground-main-entrance"
+        }
+      ],
+      "outer": true,
+      "thickness": 0.1905
     },
     {
       "a": [
@@ -2203,6 +2233,28 @@ export const first = {
       ],
       "outer": false,
       "thickness": 0.1524
+    },
+    {
+      "a": [
+        6.7708333333,
+        29.791666666666668
+      ],
+      "b": [
+        0.3125,
+        29.791666666666668
+      ],
+      "openings": [
+        {
+          "type": "door",
+          "center": 3.72916666665,
+          "width": 4,
+          "source": "Client-confirmed vertically aligned central doors; GF entrance width 4 ft on final plan.",
+          "closed": true,
+          "id": "first-balcony-door"
+        }
+      ],
+      "outer": true,
+      "thickness": 0.1905
     },
     {
       "a": [

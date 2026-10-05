@@ -32,4 +32,12 @@ OTS depth, most unlabelled door/window widths and offsets, roof opening clearanc
 
 ## Release
 
-Public URL remains https://sanluman999-design.github.io/house-3d/ . Build identifier: `2026-10-05-final-plans-r3`. Source-module URLs are versioned through the import map to avoid mixing cached old geometry with the new release. No new runtime dependency is added. See README.md for the release checks and usage.
+Public URL remains https://sanluman999-design.github.io/house-3d/ . Build identifier: `2026-10-05-final-plans-r3-entry-windows`. Source-module URLs are versioned through the import map to avoid mixing cached old geometry with the new release. No new runtime dependency is added. See README.md for the release checks and usage.
+
+## Central entry and kitchen correction
+
+The central Ground Floor opening under the front balcony now contains the main entrance door. The matching First Floor opening has a balcony door on exactly the same horizontal axis. Both use closed leaves, existing wood/frame materials and the unchanged door height. The Ground Floor plan marks the entrance as 4 ft wide; the upper door uses the same opening width to register with it. Only the missing doorway wall/jambs were added at the existing corridor mouths.
+
+The Ground Floor kitchen has two separate windows in its west and east side walls, within the front projection beyond the staircase enclosure. They do not wrap around the corners. The former inferred west kitchen door and front-centre window are replaced by this client-confirmed arrangement; the kitchen-to-lobby passage remains unchanged. The side-window widths are not separately dimensioned on the raster: the available existing exposed side-wall run sets each opening to 1.1875 ft (14.25 in), leaving solid corner connections. These widths remain provisional and are not claimed as architect-certified dimensions. Existing sill, head heights, glazing and frame materials are retained.
+
+All room polygons, wall axes outside the two new doorway infills, stairs, Store-side roof, slabs, terraces and OTS match the preceding r3 geometry. The left kitchen window's exterior trim has an explicit outward normal so its surround is outside. No general facade, camera, controls, lighting, material or UI redesign was made.
